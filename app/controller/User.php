@@ -16,7 +16,8 @@ class User extends BaseController
         $this->result = new Res();
     }
 
-    function index(){
+    function index()
+    {
         return View::fetch();
     }
 
@@ -60,7 +61,35 @@ class User extends BaseController
         return $this->result->error("登录失败");
     }
 
+    function page(Request $request)
+    {
+        $page = $request->param("page");
+        $pageSize = $request->param("pageSize");
+        $keyword = $request->param("kwyword");
 
+        $list = UserModel::where("user", "like", "%{$keyword}%")->paginate([
+            "page" => $page,
+            "pageSize" => $pageSize
+        ]);
+
+        return $this->result->success("获取数据成功", $list);
+    }
+
+    function getById($id)
+    {
+        $user = UserModel::where("id", $id)->find();
+        return $this->result->success("获取数据成功", $user);
+    }
+
+    function deleteById($id)
+    {
+        $res = UserModel::where("id", $id)->delete();
+
+        if ($res) {
+            return $this->result->success("删除数据成功", $res);
+        }
+        return $this->result->error("删除数据失败");
+    }
 }
 
 
