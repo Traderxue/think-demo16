@@ -34,7 +34,7 @@ class User extends BaseController
             "username" => $post["username"],
             "password" => password_hash($post["password"], PASSWORD_DEFAULT),
             "add_time" => date("Y-m-d H:i:s"),
-            "ip" => $post->ip()
+            "ip" => $request->ip()
         ]);
 
         if ($res) {

@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    user
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>注册</title>
+
+    <style lang="scss" scoped>
+      .box {
+        width: auto;
+        height: auto;
+        padding-top: 120px;
+        text-align: center;
+      }
+      .form {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+      }
+      .form input {
+        margin-bottom: 15px;
+        width: auto;
+        height: 30px;
+        padding-left: 10px;
+      }
+      button {
+        padding: 5px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="form">
+        <input type="text" placeholder="请输入用户名" name="username" />
+        <input type="password" placeholder="请输入密码" name="password" />
+        <button id="btn">注册</button>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        $("#btn").click(function () {
+          login();
+        });
+
+        function login() {
+          var username = $("input[name='username']").val();
+          var password = $("input[name='password']").val();
+
+          $.ajax({
+            url: "http://127.0.0.1:8000/user/register",
+            method: "POST",
+            dataType: "json",
+            data: {
+              username,
+              password,
+            },
+            success: (data) => {
+              console.log(data);
+            },
+            error: (err) => {
+              console.log(err);
+            },
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
