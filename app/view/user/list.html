@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取选择框的选中值</title>
+  <!-- 引入 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <select id="mySelect">
+    <option value="">放置 select 元素</option>
+    <option value="beij">北京</option>
+    <option value="shanghai">上海</option>
+    <option value="guangzhou">广州</option>
+    <option value="sahngezheng">深圳</option>
+  </select>
+
+  <script>
+    // 使用 jQuery 获取选中值
+    $(document).ready(function(){
+      // 当选择框的值发生变化时触发
+      $('#mySelect').change(function(){
+        // 获取选中的值
+        var selectedValue = $(this).val();
+        
+        // 在控制台打印选中的值（你可以根据需要进行其他操作）
+        console.log(selectedValue);
+      });
+    });
+  </script>
+
+</body>
+</html>

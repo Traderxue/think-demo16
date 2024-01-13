@@ -5,6 +5,7 @@ use app\BaseController;
 use think\Request;
 use app\model\User as UserModel;
 use app\util\Res;
+use think\facade\View;
 
 class User extends BaseController
 {
@@ -13,6 +14,10 @@ class User extends BaseController
     function __construct(\think\App $app)
     {
         $this->result = new Res();
+    }
+
+    function index(){
+        return View::fetch();
     }
 
     function register(Request $request)
@@ -54,6 +59,8 @@ class User extends BaseController
         }
         return $this->result->error("登录失败");
     }
+
+
 }
 
 
