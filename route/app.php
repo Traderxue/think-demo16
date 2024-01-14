@@ -23,3 +23,5 @@ Route::group("/user",function(){
     Route::post("/login","user/login");
 
 });
+
+Route::get("/list","index/list");
