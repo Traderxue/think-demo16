@@ -8,7 +8,9 @@ class Index extends BaseController
 {
     public function index()
     {
-        return View::fetch();
+        return view('index',[
+            "cate"=>$this->cateList(),
+        ]);
     }
 
     public function list(){

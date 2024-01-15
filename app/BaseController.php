@@ -6,12 +6,22 @@ namespace app;
 use think\App;
 use think\exception\ValidateException;
 use think\Validate;
+use app\model\Category as Cate;
 
 /**
  * 控制器基础类
  */
 abstract class BaseController
 {
+
+
+    public function cateList(){
+        $cate = Cate::where(['pid'=>0,'status'=>1])->order('sort desc')->select();
+        foreach ($cate as $k => $v) {
+            $cate[$k]['pcate'] = Cate::where(['pid'=>$v['id'],'status'=>1])->order('sort desc')->select();
+        }
+        return $cate;
+    }
     /**
      * Request实例
      * @var \think\Request
@@ -52,7 +62,8 @@ abstract class BaseController
 
     // 初始化
     protected function initialize()
-    {}
+    {
+    }
 
     /**
      * 验证数据

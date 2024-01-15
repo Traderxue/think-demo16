@@ -50,8 +50,9 @@
                     >首页</a
                   >
                 </li>
+                {volist name="cate" id="v"}
                 <li class="nav-item">
-                  <a class="nav-link" href="/list">列表页</a>
+                  <a class="nav-link" href="/list">{$v.name}</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -62,15 +63,15 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    编程语言
+                    {$v.name}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">HTML</a></li>
-                    <li><a class="dropdown-item" href="#">JAVASCRIPT</a></li>
-                    <li><a class="dropdown-item" href="#">JAVA</a></li>
-                    <li><a class="dropdown-item" href="#">PHP</a></li>
+                    {volist name="$v.pcate" id="vv"}
+                    <li><a class="dropdown-item" href="#">{$vv.name}                                                                                       </a></li>
+                    {/volist}
                   </ul>
                 </li>
+                {/volist}
               </ul>
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
