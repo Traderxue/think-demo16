@@ -51,9 +51,12 @@
                   >
                 </li>
                 {volist name="cate" id="v"}
+
+                {empty name="v.pcate"}
                 <li class="nav-item">
-                  <a class="nav-link" href="/list">{$v.name}</a>
+                  <a class="nav-link" href="/list/{$v.links}">{$v.name}</a>
                 </li>
+                {else /}
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -63,14 +66,16 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    {$v.name}
+                  {$v.name}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {volist name="$v.pcate" id="vv"}
-                    <li><a class="dropdown-item" href="#">{$vv.name}                                                                                       </a></li>
+                    <li><a class="dropdown-item" href="/list/{$vv.name}">{$vv.name}                                                                                       </a></li>
                     {/volist}
                   </ul>
                 </li>
+                {/empty}
+                
                 {/volist}
               </ul>
               <form class="d-flex">

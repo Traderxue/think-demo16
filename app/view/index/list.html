@@ -2,138 +2,21 @@
 <section class="mt-3">
   <div class="container">
     <div class="row">
+      {empty name="list"}
+        <span>当前分类没有文章</span>
+      {/empty}
+      {volist name="list" id="v"}
       <div class="col mb-4">
         <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
+          <img src="{$v.img}" class="card-img-top" alt="..." />
           <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
+            <a class="card-text" href="/article-{$v.id}.html"
+              >{$v.title}</a
             >
           </div>
         </div>
       </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner2.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner3.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner2.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner3.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card" style="width: 18rem">
-          <img src="/static/img/banner1.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <a class="card-text" href="/article-1.html"
-              >Some quick example text to build on the card title and make up
-              the bulk of the card's content.</a
-            >
-          </div>
-        </div>
-      </div>
+      {/volist}
     </div>
 
     <nav aria-label="Page navigation example">

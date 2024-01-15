@@ -1,4 +1,4 @@
-{extend name="base"} {block name="title"} 内容页 {/block} {block name="main"}
+{extend name="base"} {block name="title"} 文章页 {/block} {block name="main"}
 <section class="mt-3">
   <div class="container">
     <div class="row">
@@ -10,9 +10,9 @@
           </div>
 
           
-        <h4>Lorem ipsum dolor sit amet consecte Nisi repellendus quaerat</h4>
+        <h4>{$atc.title}</h4>
         <div class="mt-3">
-          <a href="" class="btn btn-info btn-sm me-2">lorem</a>
+          <a href="" class="btn btn-info btn-sm me-2">{$atc.category.name}</a>
           <span class="me-2">2023-8-23</span>
           <span>阅读 （200）</span>
         </div>

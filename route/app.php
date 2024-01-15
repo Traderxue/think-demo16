@@ -24,6 +24,6 @@ Route::group("/user",function(){
 
 });
 
-Route::get("/list","index/list");
+Route::get("/list/:links","index/list");
 
 Route::get("/article-:id","index/article");
