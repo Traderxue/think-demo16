@@ -11,4 +11,5 @@ use think\Model;
 class Article extends Model
 {
     //
+    protected $table = "tu_article";
 }

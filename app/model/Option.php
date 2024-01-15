@@ -11,4 +11,5 @@ use think\Model;
 class Option extends Model
 {
     //
+    protected $table = "tu_option";
 }
