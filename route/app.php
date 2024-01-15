@@ -25,3 +25,5 @@ Route::group("/user",function(){
 });
 
 Route::get("/list","index/list");
+
+Route::get("/article-1","index/article");

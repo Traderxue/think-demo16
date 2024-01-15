@@ -14,4 +14,8 @@ class Index extends BaseController
     public function list(){
         return View::fetch();
     }
+
+    public function article(){
+        return View::fetch();
+    }
 }
